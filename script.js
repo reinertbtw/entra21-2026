@@ -1,5 +1,8 @@
+const assentosTexto =
+    document.getElementById("assentosSelecionados");
+
 const assentos =
-    document.querySelectorAll('.assento:not(.ocupado)');
+    document.querySelectorAll(".sala .assento:not(.ocupado)");
 
 const quantidade =
     document.getElementById('quantidade');
@@ -18,7 +21,29 @@ assentos.forEach(assento => {
 
 function atualizarResumo() {
     const selecionados =
-        document.querySelectorAll('.assento.selecionado');
+        document.querySelectorAll(".sala .assento.selecionado");
+
+    const nomesAssentos = [];
+
+    selecionados.forEach(assento => {
+
+        nomesAssentos.push(
+            assento.dataset.assento
+        );
+
+    });
+
+    if (nomesAssentos.length > 0) {
+
+        assentosTexto.innerText =
+            nomesAssentos.join(", ");
+
+    } else {
+
+        assentosTexto.innerText =
+            "Nenhum assento selecionado";
+
+    }
 
     const quantidadeSelecionada =
         selecionados.length;
@@ -28,4 +53,14 @@ function atualizarResumo() {
 
     total.innerText =
         quantidadeSelecionada * preco;
+
+    document.querySelector(".info")
+        .style.transform = "scale(1.05)";
+
+    setTimeout(() => {
+
+        document.querySelector(".info")
+            .style.transform = "scale(1)";
+
+    }, 150);
 }
