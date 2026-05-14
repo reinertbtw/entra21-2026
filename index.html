@@ -18,93 +18,132 @@
         </div>
 
         <div class="direita">
+            <div class="legenda">
+
+                <div class="item-legenda">
+
+                    <div class="assento"></div>
+
+                    <span>Livre</span>
+
+                </div>
+
+                <div class="item-legenda">
+
+                    <div class="assento selecionado"></div>
+
+                    <span>Selecionado</span>
+
+                </div>
+
+                <div class="item-legenda">
+
+                    <div class="assento ocupado"></div>
+
+                    <span>Ocupado</span>
+
+                </div>
+
+            </div>
+
+            <div class="selecionados-container">
+
+                <h2>Assentos Selecionados</h2>
+
+                <p id="assentosSelecionados">
+                    Nenhum assento selecionado
+                </p>
+
+            </div>
+            
             <div class="sala">
                 <p class="info">
                     Você selecionou
                     <span id="quantidade">0</span>
-                    assentos por
-                    R$ <span id="total">0</span>
+                    assento(s) por
+                    <span id="total">0</span>
+                    reais.
                 </p>
 
                 <div class="fila">
-                    <div class="assento"></div>
-                    <div class="assento"></div>
-                    <div class="assento ocupado"></div>
-                    <div class="assento"></div>
-                    <div class="assento"></div>
-                    <div class="assento"></div>
-                    <div class="assento"></div>
-                    <div class="assento ocupado"></div>
+                    <div class="assento" data-assento="A1"></div>
+                    <div class="assento" data-assento="A2"></div>
+                    <div class="assento ocupado" data-assento="A3"></div>
+                    <div class="assento" data-assento="A4"></div>
+                    <div class="assento" data-assento="A5"></div>
+                    <div class="assento" data-assento="A6"></div>
+                    <div class="assento" data-assento="A7"></div>
+                    <div class="assento ocupado" data-assento="A8"></div>
                 </div>
                 <div class="fila">
-                    <div class="assento"></div>
-                    <div class="assento"></div>
-                    <div class="assento"></div>
-                    <div class="assento ocupado"></div>
-                    <div class="assento ocupado"></div>
-                    <div class="assento"></div>
-                    <div class="assento"></div>
-                    <div class="assento"></div>
+                    <div class="assento" data-assento="B1"></div>
+                    <div class="assento" data-assento="B2"></div>
+                    <div class="assento" data-assento="B3"></div>
+                    <div class="assento ocupado" data-assento="B4"></div>
+                    <div class="assento ocupado" data-assento="B5"></div>
+                    <div class="assento" data-assento="B6"></div>
+                    <div class="assento" data-assento="B7"></div>
+                    <div class="assento" data-assento="B8"></div>
                 </div>
                 <div class="fila">
-                    <div class="assento ocupado"></div>
-                    <div class="assento ocupado"></div>
-                    <div class="assento ocupado"></div>
-                    <div class="assento ocupado"></div>
-                    <div class="assento"></div>
-                    <div class="assento"></div>
-                    <div class="assento"></div>
-                    <div class="assento"></div>
+                    <div class="assento ocupado" data-assento="C1"></div>
+                    <div class="assento ocupado" data-assento="C2"></div>
+                    <div class="assento ocupado" data-assento="C3"></div>
+                    <div class="assento ocupado" data-assento="C4"></div>
+                    <div class="assento" data-assento="C5"></div>
+                    <div class="assento" data-assento="C6"></div>
+                    <div class="assento" data-assento="C7"></div>
+                    <div class="assento" data-assento="C8"></div>
                 </div>
                 <div class="fila">
-                    <div class="assento"></div>
-                    <div class="assento"></div>
-                    <div class="assento"></div>
-                    <div class="assento"></div>
-                    <div class="assento"></div>
-                    <div class="assento"></div>
-                    <div class="assento"></div>
-                    <div class="assento"></div>
+                    <div class="assento" data-assento="D1"></div>
+                    <div class="assento" data-assento="D2"></div>
+                    <div class="assento" data-assento="D3"></div>
+                    <div class="assento" data-assento="D4"></div>
+                    <div class="assento" data-assento="D5"></div>
+                    <div class="assento" data-assento="D6"></div>
+                    <div class="assento" data-assento="D7"></div>
+                    <div class="assento" data-assento="D8"></div>
                 </div>
                 <div class="fila">
-                    <div class="assento"></div>
-                    <div class="assento"></div>
-                    <div class="assento"></div>
-                    <div class="assento"></div>
-                    <div class="assento"></div>
-                    <div class="assento"></div>
-                    <div class="assento"></div>
-                    <div class="assento"></div>
+                    <div class="assento" data-assento="E1"></div>
+                    <div class="assento" data-assento="E2"></div>
+                    <div class="assento" data-assento="E3"></div>
+                    <div class="assento" data-assento="E4"></div>
+                    <div class="assento" data-assento="E5"></div>
+                    <div class="assento" data-assento="E6"></div>
+                    <div class="assento" data-assento="E7"></div>
+                    <div class="assento" data-assento="E8"></div>
                 </div>
                 <div class="fila">
-                    <div class="assento ocupado"></div>
-                    <div class="assento"></div>
-                    <div class="assento"></div>
-                    <div class="assento"></div>
-                    <div class="assento"></div>
-                    <div class="assento ocupado"></div>
-                    <div class="assento"></div>
-                    <div class="assento"></div>
+                    <div class="assento ocupado" data-assento="F1"></div>
+                    <div class="assento" data-assento="F2"></div>
+                    <div class="assento" data-assento="F3"></div>
+                    <div class="assento" data-assento="F4"></div>
+                    <div class="assento" data-assento="F5"></div>
+                    <div class="assento ocupado" data-assento="F6"></div>
+                    <div class="assento" data-assento="F7"></div>
+                    <div class="assento" data-assento="F8"></div>
                 </div>
                 <div class="fila">
-                    <div class="assento"></div>
-                    <div class="assento"></div>
-                    <div class="assento"></div>
-                    <div class="assento ocupado"></div>
-                    <div class="assento"></div>
-                    <div class="assento"></div>
-                    <div class="assento"></div>
-                    <div class="assento"></div>
+                    <div class="assento" data-assento="G1"></div>
+                    <div class="assento" data-assento="G2"></div>
+                    <div class="assento" data-assento="G3"></div>
+                    <div class="assento ocupado" data-assento="G4"></div>
+                    <div class="assento" data-assento="G5"></div>
+                    <div class="assento" data-assento="G6"></div>
+                    <div class="assento" data-assento="G7"></div>
+                    <div class="assento" data-assento="G8"></div>
                 </div>
                 <div class="fila">
-                    <div class="assento ocupado"></div>
-                    <div class="assento ocupado"></div>
-                    <div class="assento"></div>
-                    <div class="assento"></div>
-                    <div class="assento"></div>
-                    <div class="assento"></div>
-                    <div class="assento ocupado"></div>
-                    <div class="assento ocupado"></div>
+                    <div class="assento ocupado" data-assento="H1"></div>
+                    <div class="assento ocupado" data-assento="H2"></div>
+                    <div class="assento" data-assento="H3"></div>
+                    <div class="assento" data-assento="H4"></div>
+                    <div class="assento" data-assento="H5"></div>
+                    <div class="assento" data-assento="H6"></div>
+                    <div class="assento ocupado" data-assento="H7"></div>
+                    <div class="assento ocupado" data-assento="H8"></div>
                 </div>
             </div>
         </div>
