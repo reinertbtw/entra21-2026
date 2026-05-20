@@ -1,32 +1,8 @@
-const pessoas = JSON.parse(localStorage.getItem('pessoas')) || [];
+const pessoas =
+    JSON.parse(localStorage.getItem('pessoas')) || [];
 
 const botao =
     document.getElementById('cadastrar');
-
-const tabela =
-    document.getElementById('tabela');
-
-const botaoLimpar =
-    document.getElementById('limpar');
-
-const botaoMostrar =
-    document.getElementById('mostrar');
-
-function mostrarTabela() {
-    tabela.innerHTML = '';
-
-    pessoas.forEach(pessoa => {
-        tabela.innerHTML += `
-            <tr>
-                <td>${pessoa.nome}</td>
-                <td>${pessoa.email}</td>
-                <td>${pessoa.telefone}</td>
-            </tr>
-        `;
-    });
-}
-
-mostrarTabela();
 
 botao.addEventListener('click', () => {
 
@@ -52,17 +28,6 @@ botao.addEventListener('click', () => {
         JSON.stringify(pessoas)
     );
 
-    mostrarTabela();
-});
+    alert('Cliente cadastrado!');
 
-botaoLimpar.addEventListener('click', () => {
-    tabela.innerHTML = '';
-
-    botaoMostrar.style.display = 'inline-block';
-});
-
-botaoMostrar.addEventListener('click', () => {
-    mostrarTabela();
-
-    botaoMostrar.style.display = 'none';
 });
