@@ -4,38 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Cadastro de Clientes</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>Cadastro de Clientes</h1>
 
-    <input type="text" id="nome" placeholder="Nome">
-    <input type="email" id="email" placeholder="Email">
-    <input type="text" id="telefone" placeholder="Telefone">
+    <div class="container">
 
-    <button id="cadastrar">Cadastrar</button>
-    <button id="limpar">Limpar Tabela</button>
-    <button id="mostrar" style="display: none;">Mostrar Dados</button>
+        <h1>Cadastro de Clientes</h1>
 
-    <hr>
+        <input type="text" id="nome" placeholder="Nome">
 
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Email</th>
-                <th>Telefone</th>
-            </tr>
-        </thead>
-        <tbody id="tabela">
-            <!-- Clientes cadastrados aparecerão aqui -->
-        </tbody>
-    </table>
+        <input type="email" id="email" placeholder="Email">
+
+        <input type="text" id="telefone" placeholder="Telefone">
+
+        <button id="cadastrar">
+            Cadastrar
+        </button>
+
+        <a href="clientes.html">
+            <button>
+                Ver Clientes
+            </button>
+        </a>
+
+    </div>
 
     <script src="script.js"></script>
+
 </body>
 
 </html>
