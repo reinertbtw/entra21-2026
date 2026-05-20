@@ -25,11 +25,13 @@ function mostrarClientes() {
                     ${pessoa.telefone}
                 </p>
 
-                <button onclick="editarCliente(${indice})">
+                <button class="editar"
+                    onclick="editarCliente(${indice})">
                     Editar
                 </button>
 
-                <button onclick="excluirCliente(${indice})">
+                <button class="excluir"
+                    onclick="excluirCliente(${indice})">
                     Excluir
                 </button>
 
@@ -52,25 +54,57 @@ function excluirCliente(indice) {
 
 function editarCliente(indice) {
 
-    const novoNome = prompt(
-        'Novo nome:',
-        pessoas[indice].nome
-    );
+    const card =
+        document.querySelectorAll('.card')[indice];
 
-    const novoEmail = prompt(
-        'Novo email:',
-        pessoas[indice].email
-    );
+    card.innerHTML = `
+        <h2>Editar Cliente</h2>
 
-    const novoTelefone = prompt(
-        'Novo telefone:',
-        pessoas[indice].telefone
-    );
+        <input
+            type="text"
+            id="nomeEdit"
+            value="${pessoas[indice].nome}"
+        >
+
+        <input
+            type="email"
+            id="emailEdit"
+            value="${pessoas[indice].email}"
+        >
+
+        <input
+            type="text"
+            id="telefoneEdit"
+            value="${pessoas[indice].telefone}"
+        >
+
+        <button class="editar"
+            onclick="salvarEdicao(${indice})">
+            Salvar
+        </button>
+
+        <button class="cancelar"
+            onclick="mostrarClientes()">
+            Cancelar
+        </button>
+    `;
+}
+
+function salvarEdicao(indice) {
+
+    const nome =
+        document.getElementById('nomeEdit').value;
+
+    const email =
+        document.getElementById('emailEdit').value;
+
+    const telefone =
+        document.getElementById('telefoneEdit').value;
 
     pessoas[indice] = {
-        nome: novoNome,
-        email: novoEmail,
-        telefone: novoTelefone
+        nome,
+        email,
+        telefone
     };
 
     localStorage.setItem(
