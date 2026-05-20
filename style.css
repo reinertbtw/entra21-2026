@@ -28,6 +28,8 @@ body {
 
 h1 {
     text-align: center;
+
+    color: blue;
 }
 
 input {
@@ -63,5 +65,9 @@ button:hover {
 }
 
 a {
-    text-decoration: none;
+    width: 100%;
+}
+
+a button {
+    width: 100%;
 }
