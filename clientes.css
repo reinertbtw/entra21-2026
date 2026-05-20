@@ -1,0 +1,103 @@
+body {
+    font-family: Arial;
+
+    background: #ececec;
+
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.cards {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 20px;
+}
+
+.card {
+    background: white;
+
+    width: 280px;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.card h2 {
+    margin-bottom: 15px;
+
+    color: blue;
+}
+
+.card p {
+    margin: 8px 0;
+}
+
+.card button {
+    margin-top: 15px;
+
+    width: 100%;
+
+    padding: 10px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: blue;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+.card button:hover {
+    background: darkblue;
+}
+
+.voltar {
+    display: block;
+
+    margin: 0 auto 30px auto;
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: blue;
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.voltar:hover {
+    background: darkblue;
+}
