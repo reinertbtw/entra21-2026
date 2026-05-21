@@ -15,10 +15,26 @@ botao.addEventListener('click', () => {
     const telefone =
         document.getElementById('telefone').value;
 
+    const cep =
+        document.getElementById('cep').value;
+
+    const estado =
+        document.getElementById('estado').value;
+
+    const cidade =
+        document.getElementById('cidade').value;
+
+    const rua =
+        document.getElementById('rua').value;
+
     const pessoa = {
         nome,
         email,
-        telefone
+        telefone,
+        cep,
+        estado,
+        cidade,
+        rua
     };
 
     pessoas.push(pessoa);
@@ -31,3 +47,23 @@ botao.addEventListener('click', () => {
     alert('Cliente cadastrado!');
 
 });
+
+function buscarLogradouro() {
+
+    const cep =
+        document.getElementById('cep');
+
+    fetch(`https://viacep.com.br/ws/${cep.value}/json/`)
+        .then(dados => dados.json())
+        .then(resposta => {
+
+            document.getElementById('rua').value =
+                resposta.logradouro;
+
+            document.getElementById('estado').value =
+                resposta.uf;
+
+            document.getElementById('cidade').value =
+                resposta.localidade;
+        });
+}
