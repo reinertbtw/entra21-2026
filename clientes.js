@@ -25,6 +25,26 @@ function mostrarClientes() {
                     ${pessoa.telefone}
                 </p>
 
+                    <p>
+                    <strong>CEP:</strong>
+                    ${pessoa.cep}
+                </p>
+
+                <p>
+                    <strong>Endereço:</strong>
+                    ${pessoa.estado}
+                </p>
+
+                <p>
+                    <strong>Número:</strong>
+                    ${pessoa.cidade}
+                </p>
+
+                <p>
+                    <strong>Bairro:</strong>
+                    ${pessoa.rua}
+                </p>
+
                 <button class="editar"
                     onclick="editarCliente(${indice})">
                     Editar
@@ -78,6 +98,30 @@ function editarCliente(indice) {
             value="${pessoas[indice].telefone}"
         >
 
+        <input
+            type="text"
+            id="cepEdit"
+            value="${pessoas[indice].cep}"
+        >
+
+        <input
+            type="text"
+            id="estadoEdit"
+            value="${pessoas[indice].estado}"
+        >
+
+        <input
+            type="text"
+            id="cidadeEdit"
+            value="${pessoas[indice].cidade}"
+        >
+
+        <input
+            type="text"
+            id="ruaEdit"
+            value="${pessoas[indice].rua}"
+        >
+
         <button class="editar"
             onclick="salvarEdicao(${indice})">
             Salvar
@@ -101,10 +145,26 @@ function salvarEdicao(indice) {
     const telefone =
         document.getElementById('telefoneEdit').value;
 
+    const cep =
+        document.getElementById('cepEdit').value;
+
+    const estado =
+        document.getElementById('estadoEdit').value;
+
+    const cidade =
+        document.getElementById('cidadeEdit').value;
+
+    const rua =
+        document.getElementById('ruaEdit').value;
+
     pessoas[indice] = {
         nome,
         email,
-        telefone
+        telefone,
+        cep,
+        estado,
+        cidade,
+        rua
     };
 
     localStorage.setItem(
