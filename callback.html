@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback</title>
+</head>
+
+<body>
+    <p></p>
+    <span></span>
+    <p></p>
+    <span></span>
+
+
+    <script>
+        function mostrarEmParagrafo(n, indice) {
+            document.getElementsByTagName('p')[indice].innerHTML = n
+        }
+
+        function mostrarEmSpan(n) {
+            document.getElementsByTagName('span')[0].innerHTML = n
+        }
+
+        function calcular(n1, n2, exibeResultado) {
+            let x = n1 + n2
+            exibeResultado(x)
+        }
+
+        function subtrair(n1, n2, exibeResultado) {
+            let x = n1 - n2
+            exibeResultado(x)
+        }
+
+        function multiplicar(n1, n2, exibeResultado) {
+            let x = n1 * n2
+            exibeResultado(x)
+        }
+
+        calcular(50, 20, (resultado) => mostrarEmParagrafo(resultado, 0))
+        subtrair(20, 50, mostrarEmSpan)
+        multiplicar(10, 2, (resultado) => mostrarEmParagrafo(resultado, 1))
+
+    </script>
+</body>
+</html>

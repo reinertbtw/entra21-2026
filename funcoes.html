@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções</title>
+</head>
+<body>
+    <h2>Trabalhando com funções</h2>
+     <button onclick="hello()">Clique</button>
+    <script>
+        console.log('Hello, World!')
+        
+        function hello(){
+            console.log('Hello Again!')
+        }
+
+        function dobro(n1){ //com parametro
+            let x = n1 * 2
+            console.log(x)
+        }
+
+        function dividir(n1, n2){
+            var x = n1 / n2
+            console.log(x)
+        }
+
+        dobro(50)
+        dividir(50,2)
+
+        function subtrair(n1, n2){
+            var x = n1 - n2
+            return x
+        }
+
+       let subtracao = subtrair(50,10)
+       console.log(subtracao)
+
+       const gravar = function(nome){   // anônima
+           console.log(`Salvando: ${nome}`)
+       }
+
+       gravar('Lucas Reinert')
+
+       const nomeCompleto = function(nome, sobreNome){ //anônima
+           console.log(`${nome} ${sobreNome}`)
+       }
+
+       nomeCompleto('Lucas', 'Reinert')
+
+       const media = (n1,n2,n3) => { //arrow
+         let soma = n1 + n2 + n3
+         console.log(soma/3)
+       }
+
+       media(70,60,80)
+    </script>
+</body>
+</html>
