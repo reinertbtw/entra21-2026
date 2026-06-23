@@ -136,6 +136,7 @@ create procedure AtualizarEstoque(
     in p_id_produto INT,
     in p_quantidade INT
 )
+
 begin
     update produto
     set estoque = estoque - p_quantidade
@@ -145,11 +146,9 @@ end$$
 delimiter ;
 
 call MostrarPedido(1);
-
 select * from produto;
 
 call AtualizarEstoque(1, 2);
-
 select * from produto;
 
 drop procedure if exists CadastrarProduto;
@@ -161,6 +160,7 @@ create procedure CadastrarProduto (
     in p_preco decimal(10,2),
     in p_estoque int
 )
+
 begin
     insert into produto (nome, preco, estoque)
     values (p_nome, p_preco, p_estoque);
@@ -169,5 +169,41 @@ end$$
 delimiter ;
 
 call CadastrarProduto('abacaxi', 29.00, 9);
-
 select * from produto;
+
+/* Triggers */
+--------------
+/* Exemplo 1 - Trigger de Auditoria */
+create table clientes(
+	id int auto_increment primary key,
+    nome varchar(100),
+    email varchar(100)
+);
+
+create table log_clientes(
+	id int auto_increment primary key,
+	mensagem varchar(255),
+    data_evento datetime
+);
+
+delimiter $$
+
+create trigger trg_cliente_insert
+after insert on clientes
+for each row
+begin
+
+	insert into log_clientes(
+		mensagem,
+        data_evento
+	)
+    values(
+		concat('Cliente cadastrado: ', new.nome),
+        now()
+	);
+end $$
+
+delimiter ;
+
+insert into clientes(nome,email)
+values('João','joao@email.com');
