@@ -1,36 +1,45 @@
-import java.util.ArrayList;
-import java.util.List;
-
-public class Main {
+public class Atividade1 {
     public static void main(String[] args) {
-        List<Pessoa> pessoas = new ArrayList<>();
+        Produtos p = new Produtos();
+        p.nome = "Pão";
+        p.descricao = "alimento feito de farinha amassada";
+        p.preco = 2;
+        p.estoque = 10;
+        p.unMedida = "G";
+        p.display();
+        System.out.println(p.concederAcrescimo(5));
 
-        Pessoa p = new Pessoa();
-        p.nome = "Ana";
-        p.email = "ana@gmail.com";
-        pessoas.add(p);
-
-        Pessoa p2 = new Pessoa();
-        p2.nome = "Joao";
-        p2.email = "joao@gmail.com";
-        pessoas.add(p2);
-
-        Pessoa p3 = new Pessoa();
-        p3.nome = "Pedro";
-        p3.email = "pedro@gmail.com";
-        pessoas.add(p3);
-
-        for (Pessoa x : pessoas) {
-            x.display();
-        }
+        Produtos p2 = new Produtos();
+        p2.nome = "Farinha";
+        p2.descricao = "pó alimentício obtido pela moagem de grãos";
+        p2.preco = 10;
+        p2.estoque = 50;
+        p2.unMedida = "KG";
+        p2.display();
+        System.out.println(p2.concederDesconto(10));
     }
 }
 
-class Pessoa {
+class Produtos {
     String nome;
-    String email;
+    String descricao;
+    int preco;
+    int estoque;
+    String unMedida;
+
+    public double concederAcrescimo(double taxa) {
+        return this.preco + this.preco * (taxa / 100);
+    }
+
+    public double concederDesconto(double taxa) {
+        return this.preco - this.preco * (taxa / 100);
+    }
 
     void display() {
-        System.out.println(this.nome + " " + this.email);
+        System.out.println("Produto..........:   " + this.nome);
+        System.out.println("Descrição........:   " + this.descricao);
+        System.out.println("Preço............:   " + this.preco);
+        System.out.println("Estoque..........:   " + this.estoque);
+        System.out.println("Unidade de Medida:   " + this.unMedida);
     }
 }
