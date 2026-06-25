@@ -1,14 +1,28 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
+        List<Pessoa> pessoas = new ArrayList<>();
+
         Pessoa p = new Pessoa();
         p.nome = "Ana";
         p.email = "ana@gmail.com";
-        p.display();
+        pessoas.add(p);
 
         Pessoa p2 = new Pessoa();
-        p.nome = "Joao";
-        p.email = "joao@gmail.com";
-        p.display();
+        p2.nome = "Joao";
+        p2.email = "joao@gmail.com";
+        pessoas.add(p2);
+
+        Pessoa p3 = new Pessoa();
+        p3.nome = "Pedro";
+        p3.email = "pedro@gmail.com";
+        pessoas.add(p3);
+
+        for (Pessoa x : pessoas) {
+            x.display();
+        }
     }
 }
 
