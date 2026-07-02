@@ -5,7 +5,7 @@ public class Main {
         ar.mostrarTemperatura();
         ar.aumentarTemperatura(4);
         ar.mostrarTemperatura();
-        ar.diminuirTemperatura(10);
+        ar.diminuirTemperatura(5);
         ar.mostrarTemperatura();
     }
 }
